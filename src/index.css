@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+/* ── Design Tokens ── */
+@theme {
+  --color-sable: #F4F1EA;
+  --color-sable-dark: #EBE7DD;
+  --color-noir: #121212;
+  --color-noir-light: #2A2A2A;
+  --color-sauge: #7D8E72;
+  --color-sauge-light: #95A68A;
+  --color-sauge-dark: #6B7A61;
+  --color-gris: #8A8A8A;
+  --color-gris-light: #B5B5B5;
+  --color-blanc: #FFFFFF;
+
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Montserrat', 'Segoe UI', sans-serif;
+}
+
+/* ── Global Resets ── */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-sable);
+  color: var(--color-noir);
+  overflow-x: hidden;
+}
+
+/* ── Typography ── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-sable);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-sauge);
+  border-radius: 999px;
+}
+
+/* ── Horizontal Scroll (Gallery) ── */
+.snap-gallery {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.snap-gallery::-webkit-scrollbar {
+  display: none;
+}
+.snap-gallery > * {
+  scroll-snap-align: center;
+}
+
+/* ── Page Transition Layer ── */
+.page-transition {
+  will-change: opacity, transform;
+}
